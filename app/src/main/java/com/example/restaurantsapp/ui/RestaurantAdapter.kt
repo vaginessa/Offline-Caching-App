@@ -1,4 +1,19 @@
 package com.example.restaurantsapp.ui
 
-class RestaurantAdapter {
+import androidx.recyclerview.widget.RecyclerView
+import com.example.restaurantsapp.data.Restaurant
+import com.example.restaurantsapp.databinding.RestaurantItemBinding
+
+class RestaurantAdapter : List<Restaurant,RestaurantAdapter.RestaurantViewHolder>(RestaurantComparator()){
+
+
+    class RestaurantViewHolder(private val binding:RestaurantItemBinding):
+        RecyclerView.ViewHolder(binding.root) {
+
+            fun bind(restaurant: Restaurant){
+                binding.apply {
+
+                }
+            }
+    }
 }
