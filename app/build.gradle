@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
+//    Kotlin Annotation Processing Tool
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
