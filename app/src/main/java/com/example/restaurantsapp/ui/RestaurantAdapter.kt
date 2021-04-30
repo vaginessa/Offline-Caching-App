@@ -17,7 +17,9 @@ class RestaurantAdapter : List<Restaurant,RestaurantAdapter.RestaurantViewHolder
                         .load(restaurant.logo)
                         .into(imageViewLogo)
 
-
+                    textViewName.text = restaurant.name
+                    textViewAddress.text = restaurant.address
+                    textViewType.text = restaurant.type
                 }
             }
     }
