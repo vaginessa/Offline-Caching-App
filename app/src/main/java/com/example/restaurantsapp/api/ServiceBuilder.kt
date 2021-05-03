@@ -4,10 +4,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
-
+    private const val BASE_URL = "https://random-data-api.com/api/"
     fun createRetrofitService():ServiceBuilder {
         val retrofit = Retrofit.Builder()
-            .baseUrl(RestaurantApi.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
