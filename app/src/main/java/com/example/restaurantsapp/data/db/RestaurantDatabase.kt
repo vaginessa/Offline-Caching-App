@@ -1,4 +1,4 @@
 package com.example.restaurantsapp.data.db
 
-class RestaurantDatabase {
+abstract class RestaurantDatabase {
 }
