@@ -1,23 +1,13 @@
 package com.example.restaurantsapp.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.restaurantsapp.api.RestaurantApi
 import com.example.restaurantsapp.data.Restaurant
+import com.example.restaurantsapp.data.repository.RestaurantRepository
 import kotlinx.coroutines.launch
 
-class RestaurantViewModel(private val api:RestaurantApi)  : ViewModel(){
+class RestaurantViewModel(private val repository: RestaurantRepository)  : ViewModel(){
 
-    private val restaurantsLiveData = MutableLiveData<List<Restaurant>>()
-    val restaurants:LiveData<List<Restaurant>> = restaurantsLiveData
-
-    init {
-        viewModelScope.launch {
-            val restaurants = api.getRestaurants()
-            restaurantsLiveData.value = restaurants
-        }
+    val restaurants = repository.getRestaurants().asLiveData()
     }
 
-}
